@@ -3,3 +3,7 @@ bower_components
 
 # DB JSON
 res
+
+# Update form and controller for now
+views/updateForm.html
+js/controllers/updateController.js

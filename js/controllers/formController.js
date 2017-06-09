@@ -6,17 +6,8 @@
  	}
 
 	$scope.add = function(){
-		$http({
-			method: "POST",
-			url: "http://localhost:3030/students",
-			data: $scope.student
-		}).then(function successCallback(response){
-			console.log(response);
-		}, function errorCallback(response){
-			console.log(response);
-		});
+		Operations.create($scope.student);
 		reset();
 		alert('Successfully added a new record');
-		$window.location.href='#!/display';
 	}
 }]);

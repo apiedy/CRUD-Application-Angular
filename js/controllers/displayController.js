@@ -1,12 +1,7 @@
-app.controller('DisplayController', ['$scope', 'Operations', '$http', function($scope,Operations,$http) {
+app.controller('DisplayController', ['$scope', 'Operations', function($scope,Operations) {
 	
-	$http({
-		method: "GET",
-		url: "http://localhost:3030/students"
-	}).then(function successCallback(response){
-		$scope.details = response.data;
-	}, function errorCallback(response){
-		$scope.details = response.statusText;
+	Operations.getData().then(function(response){
+		$scope.details = response;
 	});
-
+	
 }]);

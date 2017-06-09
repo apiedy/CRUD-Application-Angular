@@ -14,10 +14,10 @@
 				controller: "FormController",
 				templateUrl: "views/createForm.html"
 			})
-			.when('/edit', {
+			/*.when('/edit', {
 				controller: "UpdateController",
 				templateUrl: "views/updateForm.html"
-			})
+			})*/
 			.when('/display/:id', {
 				controller: "PersonalController",
 				templateUrl: "views/studentcard.html"

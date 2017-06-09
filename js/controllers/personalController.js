@@ -1,4 +1,4 @@
-app.controller('PersonalController', ['$scope', '$http', '$routeParams', function($scope,$http,$routeParams) {
+app.controller('PersonalController', ['$scope', '$http', '$routeParams', 'Operations', '$window', function($scope,$http,$routeParams,Operations,$window) {
 	var id = $routeParams.id;
 	var card_url = "http://localhost:3030/students/"+id;
 	angular.element('#editForm').css({display:'none'});
@@ -31,26 +31,13 @@ app.controller('PersonalController', ['$scope', '$http', '$routeParams', functio
 			"college": $scope.clg
 		}
 		console.log(student);
-		$http({
-			method: "PUT",
-			url: card_url,
-			data: student
-		}).then(function successCallback(response){
-			console.log(response);
-		}, function errorCallback(response){
-			console.log(response);
-		});
+		Operations.update(card_url,student);
+		$window.location.href = "#!/";
 	}
 
 	$scope.delete = function() {
-		$http({
-			method: "DELETE",
-			url: card_url,
-		}).then(function successCallback(response){
-			console.log(response);
-		}, function errorCallback(response){
-			console.log(response);
-		});
+		Operations.delete(card_url);
+		$window.location.href = "#!/";
 	}
 
 }]);
