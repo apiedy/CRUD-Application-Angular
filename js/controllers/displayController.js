@@ -9,7 +9,4 @@ app.controller('DisplayController', ['$scope', 'Operations', '$http', function($
 		$scope.details = response.statusText;
 	});
 
-	$scope.delete=function(x){
-		Operations.delete(x);
-	}
 }]);

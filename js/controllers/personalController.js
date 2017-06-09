@@ -41,4 +41,16 @@ app.controller('PersonalController', ['$scope', '$http', '$routeParams', functio
 			console.log(response);
 		});
 	}
+
+	$scope.delete = function() {
+		$http({
+			method: "DELETE",
+			url: card_url,
+		}).then(function successCallback(response){
+			console.log(response);
+		}, function errorCallback(response){
+			console.log(response);
+		});
+	}
+
 }]);
