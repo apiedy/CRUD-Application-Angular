@@ -8,21 +8,16 @@
 					<th>Age</th>
 					<th>Degree</th>
 					<th>College</th>
-					<th>Actions</th>
 				</tr>
 			</thead>
 
 			<tbody>
 				<tr ng-repeat="student in details">
 					<td>{{ $index +1 }}</td>
-					<td>{{ student.fname + ", " + student.lname }}</td>
+					<td><a href="#!/display/{{ student.id }}">{{ student.fname + ", " + student.lname }}</a></td>
 					<td>{{ student.age }}</td>
-					<td>{{ student.deg }}</td>
-					<td>{{ student.clg }}</td>
-					<td>
-						<a href="#!/edit"><button class="btn btn-default" id="editBtn" ng-click="edit($index)">Edit</button></a>
-						<button class="btn btn-warning" ng-click="delete($index)">Delete</button>
-					</td>
+					<td>{{ student.degree }}</td>
+					<td>{{ student.college }}</td>
 				</tr>
 			</tbody>
 

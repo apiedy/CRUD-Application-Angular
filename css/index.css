@@ -16,3 +16,6 @@
 #editBtn {
 	margin-right: 10px;
 }
+.table>tbody>tr>td {
+	vertical-align: middle;
+}

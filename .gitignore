@@ -1,2 +1,5 @@
 #Depemdency directories
 bower_components
+
+# DB JSON
+res

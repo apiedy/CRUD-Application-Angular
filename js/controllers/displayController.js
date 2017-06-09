@@ -1,12 +1,15 @@
-app.controller('DisplayController', ['$scope', 'Operations', function($scope,Operations) {
+app.controller('DisplayController', ['$scope', 'Operations', '$http', function($scope,Operations,$http) {
 	
-	$scope.details= Operations.details();
-	
+	$http({
+		method: "GET",
+		url: "http://localhost:3030/students"
+	}).then(function successCallback(response){
+		$scope.details = response.data;
+	}, function errorCallback(response){
+		$scope.details = response.statusText;
+	});
+
 	$scope.delete=function(x){
 		Operations.delete(x);
-	}
-
-	$scope.edit = function(x){
-		Operations.edit(x);
 	}
 }]);

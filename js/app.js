@@ -1,8 +1,6 @@
 
 	var app = angular.module('myApp', ['ngRoute']);
 	
-	var myData = [];
-	
 	app.config(function($routeProvider) {
 		$routeProvider
 			.when('/', {
@@ -19,6 +17,10 @@
 			.when('/edit', {
 				controller: "UpdateController",
 				templateUrl: "views/updateForm.html"
+			})
+			.when('/display/:id', {
+				controller: "PersonalController",
+				templateUrl: "views/studentcard.html"
 			})
 			.otherwise({
 				redirectTo: '/'
