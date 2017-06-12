@@ -8,6 +8,7 @@
 	$scope.add = function(){
 		Operations.create($scope.student);
 		reset();
-		alert('Successfully added a new record');
+		$window.location.href="#!/display";
+		toastr.success("Success!", "Created a record");
 	}
 }]);

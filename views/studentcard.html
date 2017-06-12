@@ -1,35 +1,37 @@
 <div class="container" ng-controller="PersonalController">
-	<div class="panel panel-default">
-		<div class="panel-body">
-			<p class="to-hide">{{ details.fname + ", " + details.lname }}</p>
-			<p class="to-hide">{{ details.age }}</p>
-			<p class="to-hide">{{ details.degree }}</p>
-			<p class="to-hide">{{ details.college }}</p>
-			<form id="editForm" ng-submit="update()">
-			<div class="form-group">
-				<label for="fname">First Name:</label>
-				<input type="text" id="fname" class="form-control" title="Numbers and other special characters are not allowed" placeholder="First Name" pattern="^[A-Za-z ]+$" required ng-model="fname">
+	<center>
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<p class="to-hide">{{ details.fname + ", " + details.lname }}</p>
+				<p class="to-hide">{{ details.age }}</p>
+				<p class="to-hide">{{ details.degree }}</p>
+				<p class="to-hide">{{ details.college }}</p>
+				<form id="editForm" ng-submit="update()">
+				<div class="form-group">
+					<label for="fname">First Name:</label>
+					<input type="text" id="fname" class="form-control" title="Numbers and other special characters are not allowed" placeholder="First Name" pattern="^[A-Za-z ]+$" required ng-model="fname">
+				</div>
+				<div class="form-group">
+					<label for="lname">Last Name:</label>
+					<input type="text" id="lname" class="form-control" title="Numbers and other special characters are not allowed" placeholder="Last Name" pattern="^[A-Za-z ]+$" required ng-model="lname">
+				</div>
+				<div class="form-group">
+					<label for="age">Age:</label>
+					<input type="text" id="age" class="form-control" title="Enter age in numbers" placeholder="Age" pattern="^[0-9]+$" required ng-model="age">
+				<div class="form-group">
+				</div>
+					<label for="deg">Degree:</label>
+					<input type="text" id="deg" class="form-control" title="Numbers and other special characters are not allowed" placeholder="Degree (B.Tech, M.Tech,etc)" pattern="^[A-Za-z ]+$" required ng-model="deg">
+				</div>
+				<div class="form-group">
+					<label for="colg">College:</label>
+					<input type="text" id="colg" class="form-control" title="Numbers and other special characters are not allowed" placeholder="College/University" pattern="^[A-Za-z ]+$" required ng-model="clg">
+				</div>
+				<input type="submit" value="Update" class="btn btn-primary">
+			</form>
+				<button class="btn btn-default to-hide" ng-click="edit()">Edit</button>
+				<button class="btn btn-warning to-hide" ng-click="delete()">Delete</button>
 			</div>
-			<div class="form-group">
-				<label for="lname">Last Name:</label>
-				<input type="text" id="lname" class="form-control" title="Numbers and other special characters are not allowed" placeholder="Last Name" pattern="^[A-Za-z ]+$" required ng-model="lname">
-			</div>
-			<div class="form-group">
-				<label for="age">Age:</label>
-				<input type="text" id="age" class="form-control" title="Enter age in numbers" placeholder="Age" pattern="^[0-9]+$" required ng-model="age">
-			<div class="form-group">
-			</div>
-				<label for="deg">Degree:</label>
-				<input type="text" id="deg" class="form-control" title="Numbers and other special characters are not allowed" placeholder="Degree (B.Tech, M.Tech,etc)" pattern="^[A-Za-z ]+$" required ng-model="deg">
-			</div>
-			<div class="form-group">
-				<label for="colg">College:</label>
-				<input type="text" id="colg" class="form-control" title="Numbers and other special characters are not allowed" placeholder="College/University" pattern="^[A-Za-z ]+$" required ng-model="clg">
-			</div>
-			<input type="submit" value="Update" class="btn btn-primary">
-		</form>
-			<button class="btn btn-default to-hide" ng-click="edit()">Edit</button>
-			<button class="btn btn-warning to-hide" ng-click="delete()">Delete</button>
 		</div>
-	</div>
+	</center>
 </div>

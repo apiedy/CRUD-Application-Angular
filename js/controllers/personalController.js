@@ -3,6 +3,10 @@ app.controller('PersonalController', ['$scope', '$http', '$routeParams', 'Operat
 	var card_url = "http://localhost:3030/students/"+id;
 	angular.element('#editForm').css({display:'none'});
 
+	toastr.options.timeOut = 3000;
+	toastr.options.extendedTimeout= 1000;
+	toastr.options.positionClass = 'toast-bottom-right';
+
 	$http({
 		method: "GET",
 		url: card_url
@@ -32,12 +36,14 @@ app.controller('PersonalController', ['$scope', '$http', '$routeParams', 'Operat
 		}
 		console.log(student);
 		Operations.update(card_url,student);
-		$window.location.href = "#!/";
+		$window.location.href = "#!/display";
+		toastr.info("Success","Edited a record.");
 	}
 
 	$scope.delete = function() {
 		Operations.delete(card_url);
-		$window.location.href = "#!/";
+		$window.location.href = "#!/display";
+		toastr.error("Deleted a record.");
 	}
 
 }]);
