@@ -27,23 +27,63 @@ app.controller('PersonalController', ['$scope', '$http', '$routeParams', 'Operat
 	}
 
 	$scope.update = function(){
-		var student = {
-			"fname": $scope.fname,
-			"lname": $scope.lname,
-			"age": $scope.age,
-			"degree": $scope.deg,
-			"college": $scope.clg
-		}
-		console.log(student);
-		Operations.update(card_url,student);
-		$window.location.href = "#!/display";
-		toastr.info("Success","Edited a record.");
+		bootbox.confirm({
+			title: "Update Record?",
+			message: "Are you sure you want to update this record?",
+			buttons: {
+				cancel: {
+					label: "<span class='glyphicon glyphicon-remove'></span> No, keep the same.",
+					className: "btn btn-default"
+				},
+				confirm: {
+					label: "<span class='glyphicon glyphicon-ok'></span> Yes, update the record.",
+					className: "btn btn-primary"
+				}
+			},
+			onEscape: true,
+    		backdrop: true,
+			callback: function(result) {
+				if(result){
+					var student = {
+						"fname": $scope.fname,
+						"lname": $scope.lname,
+						"age": $scope.age,
+						"degree": $scope.deg,
+						"college": $scope.clg
+					}
+					console.log(student);
+					Operations.update(card_url,student);
+					$window.location.href = "#!/display";
+					toastr.info("Success","Edited a record.");
+				}
+			}
+		});
 	}
 
-	$scope.delete = function() {
-		Operations.delete(card_url);
-		$window.location.href = "#!/display";
-		toastr.error("Deleted a record.");
+	$scope.delete = function() {	
+		bootbox.confirm({
+			title: "Delete Record?",
+			message: "Are you sure you want to delete this record?",
+			buttons: {
+				cancel: {
+					label: "<span class='glyphicon glyphicon-remove'></span> No, keep the record.",
+					className: "btn btn-default"
+				},
+				confirm: {
+					label: "<span class='glyphicon glyphicon-ok'></span> Yes, delete the record.",
+					className: "btn btn-danger"
+				}
+			},
+			onEscape: true,
+    		backdrop: true,
+			callback: function(result) {
+				if(result){
+					Operations.delete(card_url);
+					$window.location.href = "#!/display";
+					toastr.error("Deleted a record.");
+				}
+			}
+		});
 	}
 
 }]);
