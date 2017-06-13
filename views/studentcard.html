@@ -2,10 +2,22 @@
 	<center>
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<p class="to-hide">{{ details.fname + ", " + details.lname }}</p>
-				<p class="to-hide">{{ details.age }}</p>
-				<p class="to-hide">{{ details.degree }}</p>
-				<p class="to-hide">{{ details.college }}</p>
+				<div class="form-group to-hide">
+					<label>Name</label>
+					<p>{{ details.fname + " " + details.lname }}</p>
+				</div>
+				<div class="form-group to-hide">
+					<label>Age</label>
+					<p>{{ details.age }}</p>
+				</div>
+				<div class="form-group to-hide">
+					<label>Age</label>
+					<p>{{ details.degree }}</p>
+				</div>
+				<div class="form-group to-hide">
+					<label>Age</label>
+					<p>{{ details.college }}</p>
+				</div>
 				<form id="editForm" ng-submit="update()">
 				<div class="form-group">
 					<label for="fname">First Name:</label>
