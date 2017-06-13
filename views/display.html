@@ -1,26 +1,9 @@
 <div class="container" ng-controller="DisplayController">
-		<table class="table table-striped table-responsive">
 
-			<thead>
-				<tr>
-					<th>#</th>
-					<th>Name</th>
-					<th>Age</th>
-					<th>Degree</th>
-					<th>College</th>
-				</tr>
-			</thead>
+		<div id="toolbar" class="btn-group">
+			<a href="#!/create"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add New</button></a>
+		</div>
 
-			<tbody>
-				<tr ng-repeat="student in details">
-					<td>{{ $index +1 }}</td>
-					<td><a href="#!/display/{{ student.id }}">{{ student.fname + ", " + student.lname }}</a></td>
-					<td>{{ student.age }}</td>
-					<td>{{ student.degree }}</td>
-					<td>{{ student.college }}</td>
-				</tr>
-			</tbody>
-
-		</table>
-		<a href="#!/create"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add New</button></a>
+		<table id="displayTable"></table>
+		
 </div>
