@@ -21,7 +21,7 @@ app.controller('DisplayController', ['$scope', 'Operations', function($scope,Ope
                 switchable: false,
                 formatter: function (value, row) {
                     var name = [row.fname, row.lname].join(' ');
-                    return '<a href="#!/display/'+ row.id +'">'+name+'</a>';
+                    return '<a href="./display/students/'+ row.id +'">'+name+'</a>';
                 }
             }, {
                 field: 'age',

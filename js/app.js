@@ -1,12 +1,12 @@
 
 	var app = angular.module('myApp', ['ngRoute']);
 	
-	app.config(function($routeProvider) {
+	app.config(function($routeProvider,$locationProvider) {
 		$routeProvider
-			.when('/', {
+			.when('/home', {
 				templateUrl:"views/home.html"
 			})
-			.when('/display', {
+			.when('/display/students', {
 				controller:"DisplayController",
 				templateUrl:"views/display.html"
 			})
@@ -18,11 +18,12 @@
 				controller: "UpdateController",
 				templateUrl: "views/updateForm.html"
 			})*/
-			.when('/display/:id', {
+			.when('/display/students/:id', {
 				controller: "PersonalController",
 				templateUrl: "views/studentcard.html"
 			})
 			.otherwise({
-				redirectTo: '/'
+				redirectTo: '/display/students'
 			})
+			$locationProvider.html5Mode(true);
 	});

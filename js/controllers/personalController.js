@@ -53,7 +53,7 @@ app.controller('PersonalController', ['$scope', '$http', '$routeParams', 'Operat
 					}
 					console.log(student);
 					Operations.update(card_url,student);
-					$window.location.href = "#!/display";
+					//$window.location.href = "#!/display/students";
 					toastr.info("Success","Edited a record.");
 				}
 			}
@@ -79,7 +79,7 @@ app.controller('PersonalController', ['$scope', '$http', '$routeParams', 'Operat
 			callback: function(result) {
 				if(result){
 					Operations.delete(card_url);
-					$window.location.href = "#!/display";
+					//$window.location.href = "#!/display/students";
 					toastr.error("Deleted a record.");
 				}
 			}
