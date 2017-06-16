@@ -12,7 +12,7 @@
 	$scope.add = function(){
 		Operations.create($scope.student);
 		reset();
-		$window.location.href="#!/display";
+		//$window.location.href="#!/display/students";
 		toastr.success("Success!", "Created a record");
 	}
 }]);
